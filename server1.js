@@ -5,7 +5,8 @@ const path = require('path');
 const app = express();
 
 //set static path
-app.use(express.static(path.join(__dirname, "client"), {index: 'index2.html'}));
+// app.use(express.static(path.join(__dirname, "client"), {index: 'index2.html'}));
+app.use(express.static(path.join(__dirname, "client")));
 
 
 app.use(bodyParser.json());
