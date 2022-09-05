@@ -24,7 +24,7 @@ app.post('/subscribe', (req, res) => {
     });
 })
 
-const port = 5001;
+const port = process.env.PORT || 5001;
 
 app.listen(port, () => {
     console.log(`server listening on port ${port}`)
