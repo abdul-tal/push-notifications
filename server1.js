@@ -32,12 +32,12 @@ app.post('/subscribe', async (req, res) => {
             endpoint: subscription.endpoint
         }
     })
-    const pushid = subscription.endpoint.substr((subscription.endpoint.length - 8), subscription.endpoint.length);
-    const payload = JSON.stringify({ title: 'web push test from SERVER1'});
+    // const pushid = subscription.endpoint.substr((subscription.endpoint.length - 8), subscription.endpoint.length);
+    // const payload = JSON.stringify({ title: 'web push test from SERVER1'});
     console.log('SERVER1', JSON.stringify({
 result
     }, null, 2));
-    console.log(result[0].subscription)
+    console.log('subscription', result[0].subscription)
 })
 
 const port = process.env.PORT || 5001;
