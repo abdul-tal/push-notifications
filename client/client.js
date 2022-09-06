@@ -29,9 +29,11 @@ async function send() {
     console.log('window.location.href', window.location.href);
 
     console.log('Sending Push');
+    const url = window.location.href;
+    const subdomain = url.split('.')[0].slice(url.indexOf('//')+2);
     await fetch('/subscribe', {
         method: 'POST',
-        body: JSON.stringify({ subscription, url: window.location.href }),
+        body: JSON.stringify({ subscription, category: subdomain }),
         headers: {
             'content-type': 'application/json'
         }
