@@ -55,8 +55,9 @@ app.post('/sendNotifications', async (req, res) => {
                 category
             }
         });
-    
+        // console.log('subscriptionData', subscriptionData)
         subscriptionData.forEach(subscriberObj => {
+            console.log('subscriberObj', subscriberObj.subscription)
             const payload = {
                 title,
                 category
@@ -70,6 +71,7 @@ app.post('/sendNotifications', async (req, res) => {
         })
         res.send({ msg: "notifications sent" });
     } catch (error) {
+        console.log('error', error)
         res.send({
             error
         });
